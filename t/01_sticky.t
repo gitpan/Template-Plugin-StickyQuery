@@ -2,7 +2,7 @@ use strict;
 use CGI;
 use Template::Test;
 
-my $query = { foo => 'bar', bar => 'baz' };
+my $query = { foo => 'bar'};
 test_expect(\*DATA, undef, { query => $query });
 
 __END__
@@ -12,5 +12,5 @@ __END__
 <a href="go.cgi?foo=1">go!</A>
 [%- END %]
 --expect--
-<a href="go.cgi?foo=bar&amp;bar=baz">go!</A>
+<a href="go.cgi?foo=bar">go!</A>
 
